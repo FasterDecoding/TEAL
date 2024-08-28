@@ -21,9 +21,8 @@ dependencies = [
 
 # This should be main eval related (eg. flashattention?)
 [project.optional-dependencies]
-eval = ["datasets", "ipykernel", "packaging", "flash-attn==2.6.1", "pandas"]
+eval = ["protobuf","datasets", "packaging", "flash-attn==2.6.1", "pandas"]
 
-# torch==2.4.0, transformers==4.44.1, accelerate, sentencepiece, protobuf, datasets, ipykernel, packaging, flash-attn==2.6.1, pandas
 
 [project.urls]
 "Homepage" = "TODO"
