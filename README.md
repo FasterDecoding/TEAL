@@ -94,7 +94,7 @@ CUDA_VISIBLE_DEVICES=0 python generate.py \
     --interactive
 ```
 
-4. Run sparse inference (`scripts/run.sh`):
+4. Run sparse inference (`scripts/run.sh`)!:
 ```bash
 CUDA_VISIBLE_DEVICES=0 python generate.py \
     --compile \ 
