@@ -1,6 +1,6 @@
 # Training-Free Acivation Sparsity in Large Language Models
 
-[[Paper](https://www.arxiv.org/abs/2408.14690)][[Blog]([XXX](https://www.together.ai/blog/teal-training-free-activation-sparsity-in-large-language-models))]
+[[Paper](https://www.arxiv.org/abs/2408.14690)][[Blog](https://www.together.ai/blog/teal-training-free-activation-sparsity-in-large-language-models)]
 
 
 TEAL induces up to 40-50% model-wide activation sparsity in modern LLMs with minimal degradation, resulting in an up to 1.53-1.8x speedup in single-batch decoding.
