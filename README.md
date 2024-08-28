@@ -133,3 +133,19 @@ CUDA_VISIBLE_DEVICES=0 python teal/ppl_test.py \
 --teal_path $OUTPUT_PATH$ \
 --sparsity 0.5
 ```
+
+## Citation
+
+If you find TEAL useful, please consider citing:
+
+```
+@misc{liu2024trainingfreeactivationsparsitylarge,
+      title={Training-Free Activation Sparsity in Large Language Models}, 
+      author={James Liu and Pragaash Ponnusamy and Tianle Cai and Han Guo and Yoon Kim and Ben Athiwaratkun},
+      year={2024},
+      eprint={2408.14690},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2408.14690}, 
+}
+```
