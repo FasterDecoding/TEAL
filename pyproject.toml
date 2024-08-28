@@ -1,0 +1,32 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "teal"
+version = "0.1"
+description = "TEAL: Training-Free Activation Sparsity in Large Language Models"
+readme = "README.md"
+requires-python = ">=3.11"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+]
+
+# These should be GPT-Fast related
+dependencies = [
+   "torch==2.4.0", "transformers==4.44.1", "accelerate", "sentencepiece", "tiktoken", "blobfile", "safetensors", "pandas",
+   "datasets", "triton", "msgspec"
+]
+
+# This should be main eval related (eg. flashattention?)
+[project.optional-dependencies]
+eval = ["datasets", "ipykernel", "packaging", "flash-attn==2.6.1", "pandas"]
+
+# torch==2.4.0, transformers==4.44.1, accelerate, sentencepiece, protobuf, datasets, ipykernel, packaging, flash-attn==2.6.1, pandas
+
+[project.urls]
+"Homepage" = "TODO"
+
+[tool.setuptools.packages.find]
+exclude = ["notebooks*", "scripts*"]

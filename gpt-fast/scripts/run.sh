@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 python generate.py --compile --checkpoint_path $check_path/meta-llama/Llama-2-7b-hf/model.pth --hist_path ../models/Llama-2-7B/histograms --sparsity 0.5 --interactive
