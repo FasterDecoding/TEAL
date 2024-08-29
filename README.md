@@ -125,7 +125,7 @@ CUDA_VISIBLE_DEVICES=0 python teal/grab_acts.py \
 --output_path $OUTPUT_PATH$
 ```
 
-2. Run perplexity test (`scripts/ppl_test.bash):
+2. Run perplexity test (`scripts/ppl_test.bash`):
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python teal/ppl_test.py \
