@@ -49,8 +49,6 @@ class SparsifyFn(nn.Module):
         return self.apply(x)
 
     def apply(self, x):
-        nonzero = (x.abs() > self.threshold).sum()
-        print(f"Nonzero proportion: {nonzero / x.numel()}")
         return x.abs().gt(self.threshold) * x
     
     def get_threshold(self):
