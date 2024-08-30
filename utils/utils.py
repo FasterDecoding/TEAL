@@ -49,6 +49,8 @@ class SparsifyFn(nn.Module):
         return self.apply(x)
 
     def apply(self, x):
+        nonzero = (x.abs() > self.threshold).sum()
+        print(f"Nonzero proportion: {nonzero / x.numel()}")
         return x.abs().gt(self.threshold) * x
     
     def get_threshold(self):
@@ -222,7 +224,7 @@ def get_sparse_model(model_name, device, histogram_path, **kwargs):
 
 def get_tokenizer(tokenizer_name):
     tokenizer = transformers.AutoTokenizer.from_pretrained(
-        tokenizer_name, use_fast=False, trust_remote_code=True
+        tokenizer_name, use_fast=True, trust_remote_code=True
     )
 
     if tokenizer.pad_token_id is None:

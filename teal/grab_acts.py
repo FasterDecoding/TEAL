@@ -55,13 +55,9 @@ for sample in tqdm(dataset):
 print(len(text))
 bsz, seq_len = 10, 2048
 
-input_ids = []
-for i in range(0, len(text), seq_len):
-    ttext = text[i:i+seq_len]
-    encodings = tokenizer(ttext, truncation=True, return_tensors="pt", max_length=seq_len, return_overflowing_tokens=True, padding="max_length")
-    input_ids.append(encodings.input_ids)
+encodings = tokenizer(text, truncation=True, return_tensors="pt", max_length=seq_len, return_overflowing_tokens=True, padding="max_length")
 
-input_ids = torch.cat(input_ids, dim=0)[:bsz,:].to(device="cuda:0")
+input_ids = encodings.input_ids[:bsz,:].to(device="cuda:0")
 print(input_ids.shape)
 
 hidden_states = model.model.embed_tokens(input_ids)
