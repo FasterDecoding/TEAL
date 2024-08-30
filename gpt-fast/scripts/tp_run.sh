@@ -1,0 +1,1 @@
+time torchrun --standalone --nproc_per_node=4 generate.py --compile --checkpoint_path $OUTPUT_PATH/meta-llama/Llama-2-7b-hf/model.pth --hist_path ../models/Llama-2-70B/histograms --sparsity 0.5 --prompt "Hello, my name is "
