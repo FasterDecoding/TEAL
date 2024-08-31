@@ -101,7 +101,7 @@ def process_layer(layer, model_type, layer_idx, target_sparsity, base_step_size,
 
     histogram_path = os.path.join(teal_path, 'histograms')
     activations_path = os.path.join(teal_path, 'activations', f'act_{layer_idx}.pt')
-    output_path = os.path.join(teal_path, 'lookup', f'layer_{layer_idx}.csv')
+    output_path = os.path.join(teal_path, 'lookup', f'layer-{layer_idx}', 'results.csv')
 
     device = "cuda"
     input_acts = torch.load(activations_path, map_location='cpu').to(device)
