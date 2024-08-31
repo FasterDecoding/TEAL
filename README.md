@@ -12,9 +12,7 @@ TEAL induces up to 40-50% model-wide activation sparsity in modern LLMs with min
 
 The current release supports:
 - FP16 inference for Llama-2/3 models using uniform sparsities
-- Accuracy evaluation for Llama-2/3 and Mistral models using uniform sparsities
-
-Stay tuned for block-wise greedy sparsities!
+- Accuracy evaluation for Llama-2/3 and Mistral models using uniform and block-wise greedy sparsities
 
 
 ## News
@@ -121,8 +119,8 @@ cd TEAL
 
 ```bash
 CUDA_VISIBLE_DEVICES=0 python teal/grab_acts.py \  
---model_name meta-llama/Llama-2-7b-hf \ 
---output_path $OUTPUT_PATH$
+  --model_name meta-llama/Llama-2-7b-hf \ 
+  --output_path $OUTPUT_PATH
 ```
 
 2. Run perplexity test (`scripts/ppl_test.bash`):
@@ -130,8 +128,28 @@ CUDA_VISIBLE_DEVICES=0 python teal/grab_acts.py \
 ```bash
 CUDA_VISIBLE_DEVICES=0 python teal/ppl_test.py \
 --model_name meta-llama/Llama-2-7b-hf \
---teal_path $OUTPUT_PATH$ \
+--teal_path $OUTPUT_PATH \
 --sparsity 0.5
+```
+
+3. (Optional) Run block-wise greedy optimization (`scripts/greedyopt.bash`):
+
+```bash
+CUDA_VISIBLE_DEVICES=0 python teal/greedyopt.py \
+  --model_name meta-llama/Llama-2-7b-hf \
+  --model_type Llama-2-7B \
+  --teal_path $OUTPUT_PATH \
+  --target_sparsity 0.9 \
+  --base_step_size 0.05 \
+  --last_fraction 0.25
+```
+
+```bash
+CUDA_VISIBLE_DEVICES=0 python teal/ppl_test.py \
+  --model_name meta-llama/Llama-2-7b-hf \
+  --teal_path $OUTPUT_PATH \
+  --sparsity 0.5 \
+  --greedy_flag
 ```
 
 ## Citation

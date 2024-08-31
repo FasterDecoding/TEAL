@@ -1,0 +1,1 @@
+CUDA_VISIBLE_DEVICES=0 python teal/greedyopt.py --model_name meta-llama/Llama-2-7b-hf --model_type Llama-2-7B --teal_path $OUTPUT_PATH --target_sparsity 0.9 --base_step_size 0.025 --last_fraction 0.25
