@@ -102,6 +102,8 @@ CUDA_VISIBLE_DEVICES=0 python generate.py \
     --interactive
 ```
 
+To benchmark inference speed, remove `--interactive`.
+
 Please treat the current inference implementation as just a proof of concept! There are a few limitations:
 - Only FP16 is supported, as Triton does not currently support BF16 `atomic_add`.
 - Block-wise greedy sparsities are not currently supported (expect to have this very soon!).
