@@ -1,4 +1,4 @@
-# Training-Free Acivation Sparsity in Large Language Models
+# Training-Free Activation Sparsity in Large Language Models
 
 [[Paper](https://www.arxiv.org/abs/2408.14690)][[Blog](https://www.together.ai/blog/teal-training-free-activation-sparsity-in-large-language-models)]
 
